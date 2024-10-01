@@ -1,5 +1,6 @@
 
 import { Spotlight } from "./ui/Spotlight"
+import MagicButton from "./ui/magicbutton"
 import { TextGenerateEffect } from "./ui/textgenerate"
 
 
@@ -24,7 +25,12 @@ const Hero = () => {
             words="transforming concepts into seamless experinces"/>
 
             <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-               Hi, I&apos;m Rajesh , a Next.js Developer based in Mumbai</p>
+               Hi, I&apos;m Rajesh , a Full Stack Web Developer based in Mumbai</p>
+
+               <a href="#about">
+                  <MagicButton
+                  title="show my work"/>
+               </a>
          </div>
 
        </div>
