@@ -2,6 +2,7 @@
 import { Spotlight } from "./ui/Spotlight"
 import MagicButton from "./ui/magicbutton"
 import { TextGenerateEffect } from "./ui/textgenerate"
+import { BsArrowUpRightCircleFill } from "react-icons/bs";
 
 
 const Hero = () => {
@@ -29,7 +30,10 @@ const Hero = () => {
 
                <a href="#about">
                   <MagicButton
-                  title="show my work"/>
+                  title="show my work"
+                  icon=<BsArrowUpRightCircleFill />
+                  position="right"
+                  />
                </a>
          </div>
 
