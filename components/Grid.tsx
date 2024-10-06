@@ -1,27 +1,20 @@
+import React from 'react'
+import { BentoGrid, BentoGridItem } from './ui/bentogrid'
 
-import { BentoGrid, BentoGridItem } from "./ui/bentogrid";
-
-const Grid = () => {
+function Grid() {
   return (
-    <section id="about">
-      <BentoGrid className="w-full py-20">
-        {gridItems.map((item, i) => (
-          <BentoGridItem
+    <section id='about'>
+        <BentoGrid>
+        {[{title: 'Title1', description: 'desc1', id:1}].map((item) => (
+            <BentoGridItem
             id={item.id}
-            key={i}
+            key={item.id}
             title={item.title}
-            description={item.description}
-           
-            className={item.className}
-            img={item.img}
-            imgClassName={item.imgClassName}
-            titleClassName={item.titleClassName}
-            spareImg={item.spareImg}
-          />
+            description={item.description}/>
         ))}
-      </BentoGrid>
+        </BentoGrid>
     </section>
-  );
-};
+  )
+}
 
-export default Grid;
+export default Grid
