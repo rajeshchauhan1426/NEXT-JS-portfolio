@@ -63,7 +63,7 @@ export const navItems = [
       description: "",
       className: "lg:col-span-2 md:col-span-2 md:row-span-1 justify-content-center",
       imgClassName: "",
-      titleClassName: "justify-center md:max-w-full max-w-60 text-center position-absolute top:50% left:50%",
+      titleClassName: "justify-center md:max-w-full max-w-60 text-center",
       img: "",
       spareImg: "",
     },
