@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./gradientbg";
 import { group } from "console";
-import { Globe } from "./globe";
+
 import { GlobeDemo } from "./GridGlobe";
 
 export const BentoGrid = ({
@@ -94,15 +94,29 @@ export const BentoGridItem = ({
         {id === 2 && <GlobeDemo/>}
 
         {id === 3 && (
-          <div className=" flex gap-1 lg:gap-5 w-fit absolute =right-3 lg:-right-2">
-            <div className=" flex flex-col gap-3 lg:gap-8">
-              {['React.js', 'Next.js', 'TypeScript'].map((item) => (<span>
+          <div className=" flex gap-1 lg:gap-1 w-fit absolute -right-20 lg:-right-9">
+            <div className=" flex flex-col gap-4 lg:gap-8 ">
+           
+              {['React.js', 'Next.js', 'TypeScript'].map((item) => 
+              (<span key={item} className="py-1  lg:py-1 lg:px-2 px-2 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-slate-600">
                 {item}
               </span>))}
+              <span className="py-4 px-3 rounded-lg text-center bg-slate-600"/>
             </div>
+            
+            <div className=" flex flex-col gap-4 lg:gap-8 ">
+            <span className="py-4 px-3 rounded-lg text-center bg-slate-600"/>
+              {['Docker', 'AWS', 'NEXT'].map((item) => 
+              (<span key={item} className="py-1  lg:py-1 lg:px-2 px-2 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-slate-600">
+                {item}
+              </span>))}
+              
+            </div>
+
 
           </div>
         )}
+        
         </div>
         </div>
 
