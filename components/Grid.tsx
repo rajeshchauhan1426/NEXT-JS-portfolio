@@ -9,7 +9,7 @@ function Grid() {
         {gridItems.map(({id,title,description,className,img,imgClassName,titleClassName,spareImg}) => (
             <BentoGridItem
             id={id}
-            key={id}
+            key={id}  
             title={title}
             description={description}
             className={className}
