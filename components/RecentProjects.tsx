@@ -11,7 +11,7 @@ export const RecentProjects = () => {
         </h1>
         <div className='flex flex-wrap items-center justify-center p-4 gap-16   mt-10'>
             {projects.map (({id, title, des , img , iconLists, link}) => (
-                <div key={id} className='lg:min-h-[32.5rem] h-3/6 flex items-center justify-center sm:w-96 w-[80vw]'>
+                <div key={id} className='lg:min-h-[40rem] h-4/6 flex items-center justify-center sm:w-96 w-[100vw]'>
                     <PinContainer title={link} href={link}>
                         <div className='relative flex items-center justify-center  sm:w-96 w-[80vw] overflow-hidden h-3/6 lg:h-[30vh] md-10'>
                             <div className='relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d] '>
