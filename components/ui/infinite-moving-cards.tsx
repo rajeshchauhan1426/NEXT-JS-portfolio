@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 export const InfiniteMovingCards = ({
   items,
@@ -20,12 +20,20 @@ export const InfiniteMovingCards = ({
   pauseOnHover?: boolean;
   className?: string;
 }) => {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const scrollerRef = React.useRef<HTMLUListElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollerRef = useRef<HTMLUListElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    addAnimation();
+    setIsMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (isMounted) {
+      addAnimation();
+    }
+  }, [isMounted]);
+
   const [start, setStart] = useState(false);
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
@@ -92,7 +100,7 @@ export const InfiniteMovingCards = ({
               background:
                 "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,112,223,1) 57%, rgba(0,212,255,1) 100%)",
             }}
-            key={item.name}
+            key={idx}
           >
             <blockquote>
               <div
@@ -103,11 +111,10 @@ export const InfiniteMovingCards = ({
                 {item.quote}
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
-                <span className="flex flex-col gap-1"
-                ><div className="me-3">
-                    <img src="/profile.svg"
-                    alt="profile"></img>
-                </div>
+                <span className="flex flex-col gap-1">
+                  <div className="me-3">
+                    <img src="/profile.svg" alt="profile"></img>
+                  </div>
                   <span className=" text-xl leading-[1.6] text-white font-bold">
                     {item.name}
                   </span>
