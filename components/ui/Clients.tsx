@@ -1,9 +1,14 @@
 "use client";
 
 import React from "react";
+import dynamic from 'next/dynamic';
 
 import { companies, testimonials } from "@/data";
-import { InfiniteMovingCards } from "./infinite-moving-cards";
+
+const InfiniteMovingCards = dynamic(
+  () => import("./infinite-moving-cards").then((mod) => mod.InfiniteMovingCards),
+  { ssr: false }
+);
 
 const Clients = () => {
   return (
